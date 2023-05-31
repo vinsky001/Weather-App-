@@ -1,11 +1,17 @@
 from flask import Flask, render_template, request
 import requests
 import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
+
+def configure():
+    load_dotenv()
+
 def fetch_weather_data(city):
-    base_url = "http://api.openweathermap.org/data/2.5/weather?q={city}&appid={os.getenv}"
+    api_key = os.getenv("API_KEY")
+    base_url = "http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
     params = {
         "q" : city,
         "appid" : api_key,
