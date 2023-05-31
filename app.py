@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
 import requests
-import palse
+import os
 
 app = Flask(__name__)
 
 def fetch_weather_data(city):
-    base_url = "http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={palse.api_key}"
+    base_url = "http://api.openweathermap.org/data/2.5/weather?q={city}&appid={os.getenv}"
     params = {
         "q" : city,
         "appid" : api_key,
