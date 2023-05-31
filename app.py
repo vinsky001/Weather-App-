@@ -23,4 +23,16 @@ def fetch_weather_data(city):
     
 def display_weather_data(weather_data):
     if weather_data is None:
-        print("Unable to fetch weather data")    
+        print("Unable to fetch weather data")
+        return
+  
+  
+@app.route('/search', methods=['POST'])
+def search():
+    city_name = request.form["city"]
+    weather_data = fetch_weather_data(city.name)
+    display_weather_data(weather_data)
+    return render_template(app.index.html, weather_data=weather_data) 
+
+if __name__=="__main__":
+    app.run(debug=True)           
