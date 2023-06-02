@@ -11,36 +11,39 @@
 <body>
     <div class="container">
         <div class="search-box">
-            <i class="fa-solid fa-location-dot"></i>
-            <input type="text" id="location-input" placeholder="Enter your location">
-            <button id="search-button" class="fa-solid fa-magnifying-glass"></button>
-    </div>    
-            <div class="not found">
-                <img src="images/404.png">
-                <p>Oops! invalid location</p>   
-    </div>
-    
-    <div class="weather box">
-        <img id="weather-icon" src="">
-        <p id="temperature">Temperature</p>
-       
-    </div>
-
-    <div class="weather-details"></div>
-        <div class="humidity">
-            <i class="fa-solid fa-water"></i>
-            <div class="text">
-                <span id="humidity"></span>
-                <p>Humidity</p>
-        </div>
-    
-        <div class="wind">
-            <i class="fa-solid fa-wind"></i>
-            <div class="text">
-                <span id="wind-speed"></span>
-                <p>Wind Speed</p>
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <input class="input" type="text" id="location-input" placeholder="Enter your location">
+            </div>
+            <div class="search">
+                <div class="circle">
+                    <button id="search-button" class="fa-solid fa-magnifying-glass search-button"></button>
+                </div>
+            </div>
+        </div>     
+        <div class="weather-box">
+            <img id="weather-icon" src="../images/mist.png">
+            <div class="weather-text">
+                <p class="temperature">27 <span class="sup small">o</span><span class="sup">C</span></p>
+                <p>Windy</p>
             </div>
         </div>
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span id="humidity">75%</span>
+                    <span>Humidity</span>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span id="wind-speed">3Km/h</span>
+                    <span>Wind Speed</span>
+                </div>
+            </div>
+        </div>   
     </div>
     
 
