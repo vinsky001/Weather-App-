@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     border: 0;
@@ -7,7 +7,6 @@
 }
 
 body {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +16,7 @@ body {
 .container{
     position: relative;
     width: 400px;
-    height: 605px;
+    min-height: 605px;
     background: #fff;
     padding: 28px 32px;
     overflow: hidden;
@@ -181,4 +180,143 @@ body {
         scale: 1;
         opacity: 1;
     }
+} */
+
+*,
+::before
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(1, 36, 33);
+    padding: 20px 50px;
+}
+
+img {
+    display: block;
+    width: 50%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    gap: 25px;
+    width: 70%;
+    max-width: 300px;
+    min-width: 250px;
+    margin: auto;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box > * {
+    width: 100%;
+}
+
+.circle {    
+    padding: 3px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.circle:hover {
+    background-color: rgba(1, 36, 33, .3);
+}
+
+.search, .location {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.input {
+    border: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.input::placeholder {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: rgb(1, 36, 33);
+}
+
+.input:focus-visible, .input:focus {
+    border: 1px solid transparent;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    color: rgb(1, 36, 33);
+    cursor: pointer;
+}
+
+.location {
+    gap: 10px;
+}
+
+.weather-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(1, 36, 33);
+}
+
+.temperature {
+    display: flex;    
+    justify-content: center;
+    font-weight: bold;
+    align-items: center;
+    font-size: 28px;
+}
+
+.sup {
+    align-self: flex-start;
+    font-size: 12px;
+}
+
+.small {
+    font-size: 6px;
+}
+
+.weather-text > p {
+    margin: 0;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.weather-details > * {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text span:last-child {
+    font-size: 10px;
 }
