@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}"
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <input class="input" type="text" id="location-input" placeholder="Enter your location">
+            </div>
+            <div class="search">
+                <div class="circle">
+                    <button id="search-button" class="fa-solid fa-magnifying-glass search-button"></button>
+                </div>
+            </div>
+        </div>     
+        <div class="weather-box">
+            <img id="weather-icon" src="{{ url_for('static', filename='images/mist.png') }}">
+            <div class="weather-text">
+                <p class="temperature">27 <span class="sup small">o</span><span class="sup">C</span></p>
+                <p>Windy</p>
+            </div>
+        </div>
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span id="humidity">75%</span>
+                    <span>Humidity</span>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span id="wind-speed">3Km/h</span>
+                    <span>Wind Speed</span>
+                </div>
+            </div>
+        </div>   
+    </div>
+    
+
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>  
+</body>
+</html>
