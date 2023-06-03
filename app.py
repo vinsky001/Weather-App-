@@ -19,9 +19,9 @@ def fetch_weather_data(city):
     }
     
     try:
-        response = response.get(base_url, params=params)
+        requests.get(base_url.format(city=city), params=params)
         response = response.raise_for_status()
-        data = response.Json()
+        data = response.json()
         return data
     except response.exceptions.RequestException as e:
         print("Error occured", e)
@@ -33,12 +33,13 @@ def display_weather_data(weather_data):
         return
   
   
-@app.route('/search', methods=['POST'])
+@app.route('/search', methods=['POST', 'GET'])
 def search():
     city_name = request.form["city"]
-    weather_data = fetch_weather_data(city.name)
+    weather_data = fetch_weather_data(city_name)
     display_weather_data(weather_data)
-    return render_template(app.index.html, weather_data=weather_data) 
+    return render_template("index.html", weather_data=weather_data) 
 
 if __name__=="__main__":
+    configure()
     app.run(debug=True)         
