@@ -1,18 +1,35 @@
-document.getElementById('search-button').addEventListener('click', function() {
-    var locationInput = document.getElementById('location-input');
-    var city = locationInput.value;
+const searchButton = document.getElementById('search-button');
 
-    // Makes a request to the Python script using API endpoint
+searchButton.addEventListener('click', () => {
+    const cityInput = document.getElementById('location-input');
+    const city = cityInput.value;
 
-    var temperatureElement = document.getElementById('temperature');
-    var description = document.getElementById('description');
-    var humidityElement = document.getElementById('humidity');
-    var windSpeedElement = document.getElementById('wind-speed');
+    if (city == '') {
+        return;
+}
 
-
-    temperatureElement.textContent = 'Temperature: ' + weatherData.temperature + '°C';
-    descriptionElement.textContent = 'Description' + weatherData.description;
-    humidityElement.textContent = 'Humidity' + weatherData.humidity;
-
+fetch('/search?city=${city}')
+    .then(responce => responce.json)
+    .then(data => {
+        if (data.error) {
+            handleWeatherError();       
+    }else {
+        displayWeatherData(data);
+    }
+    });
 });
+
+function handleWeatherError(){
+    const container = document.querySelector(".container");
+    const weatherBox = document.querySelector(".weather-box");
+    const weatherDetails = document.querySelector(".weather-details");
+    const error404 = document.querySelector(".not-found");
+
+    container.style.height = '400px';
+    weatherBox.style.display = 'none';
+    weatherDetails.style.display = 'none';
+    error404.style.display = 'block';
+    error404.classList.add('fadeIn');
+
+}
 
