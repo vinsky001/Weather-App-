@@ -33,3 +33,12 @@ function handleWeatherError(){
 
 }
 
+function displayWeatherData(weatherData){
+    const image = document.getElementById('weather-icon');
+    const temperature = document.querySelector('.temperature');
+    const description = document.querySelector('.weather-text p:last-child');
+    const humidity = document.getElementById('humidity');
+    const wind = document.getElementById('wind-speed');
+
+}
+
