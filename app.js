@@ -40,5 +40,48 @@ function displayWeatherData(weatherData){
     const humidity = document.getElementById('humidity');
     const wind = document.getElementById('wind-speed');
 
+    switch (weatherData.weather[0].main) {
+        case 'Clear':
+            image.src = '{{ url_for("static", filename="images/clear.png") }}';
+            break;
+
+        case 'Rain':
+            image.src = '{{ url_for("static", filename="images/rain.png") }}';
+            break;
+
+        case 'Snow':
+            image.src = '{{ url_for("static", filename="images/snow.png") }}';
+            break;
+
+        case 'Clouds':
+            image.src = '{{ url_for("static", filename="images/cloud.png") }}';
+            break;
+
+        case 'Haze':
+            image.src = '{{ url_for("static", filename="images/mist.png") }}';
+            break;
+
+        default:
+            image.src = '';
+    }
+
+
+    temperature.innerHTML = `${parseInt(weatherData.main.temp)}<span>°C</span>`;
+    description.innerHTML = weatherData.weather[0].description;
+    humidity.innerHTML = `${weatherData.main.humidity}%`;
+    wind.innerHTML = `${parseInt(weatherData.wind.speed)}Km/h`;
+
+    const container = document.querySelector('.container');
+    const weatherBox = document.querySelector('.weather-box');
+    const weatherDetails = document.querySelector('.weather-details');
+    const error404 = document.querySelector('.not-found');
+
+    error404.style.display = 'none';
+    error404.classList.remove('fadeIn');
+    weatherBox.style.display = '';
+    weatherDetails.style.display = '';
+    weatherBox.classList.add('fadeIn');
+    weatherDetails.classList.add('fadeIn');
+    container.style.height = '590px';
 }
 
