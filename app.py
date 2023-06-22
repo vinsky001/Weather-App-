@@ -16,16 +16,16 @@ def fetch_weather_data(city):
     params = {
         "q" : city,
         "appid" : api_key,
-        "units" : "metrics"   
+        "units" : "metric"   
     }
     
     try:
-        requests.get(base_url.format(city=city), params=params)
-        response = response.raise_for_status()
+        response = requests.get(base_url.format(city=city), params=params)
+        response.raise_for_status()
         data = response.json()
         return data
     except response.exceptions.RequestException as e:
-        print("Error occured", e)
+        print("Error occured:", e)
         return None 
     
 def display_weather_data(weather_data):
