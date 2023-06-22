@@ -31,7 +31,8 @@ def fetch_weather_data(city):
 def display_weather_data(weather_data):
     if weather_data is None:
         print("Unable to fetch weather data")
-        return
+    else:
+        print(weather_data)
     
 @app.route('/')
 def index():
