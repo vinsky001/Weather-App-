@@ -4,3 +4,5 @@
 - It fetches real-time weather data from the OpenWeatherMap API and displays the temperature, humidity, and weather description.
 - The app uses a server-side Python script to handle user input and retrieve the weather data.
 - The user interface is created using HTML and CSS.
+
+![screenshot](Screenshot (93).png)
