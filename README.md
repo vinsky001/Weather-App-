@@ -8,4 +8,4 @@
 # Screenshot
 Here we have project screenshot :
 
-![alt text](http:https://github.com/vinsky001/Weather-App-/blob/main/Screenshot%20(93).png)
+![Screenshot](http:https://github.com/vinsky001/Weather-App-/blob/main/Screenshot%20(93).png)
