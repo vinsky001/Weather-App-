@@ -5,7 +5,6 @@
 - The app uses a server-side Python script to handle user input and retrieve the weather data.
 - The user interface is created using HTML and CSS.
 
-# Screenshot
-Here we have project screenshot :
 
-![Screenshot](http:https://github.com/vinsky001/Weather-App-/blob/main/Screenshot%20(93).png)
+
+![Screenshot](http://github.com/vinsky001/Weather-App-/blob/main/Screenshot%20(93).png)
